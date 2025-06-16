@@ -7,8 +7,14 @@
     <title>{% block title %}Blog{% endblock title %}</title>
   </head>
   <body>
-    {% block body %}
-    
-    {% endblock body %}
+    <nav class="py-6 px-12 bg-emerald-700 flex justify-between item-center">
+      <a href="/" class="text-white text-xl font-bold tracking-widest">BLOG</a>
+
+      <a href="/contact/" class="text-white">Contact</a>
+    </nav>
+    <main class="py-6 px-12">
+      {% block main %}
+      {% endblock%}
+    </main>
   </body>
 </html>
