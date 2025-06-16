@@ -6,7 +6,7 @@
     <div class="p-6 bg-gray-100">
       <h1 class='mb-6 text-xl'>{{post.title}}</h1>
 
-      <a href="/{{post.slug}}" class='text-emerald-700'>Read more</a>
+      <a href="{% url 'detail' slug=post.slug %}" class='text-emerald-700'>Read more</a>
     </div>
     {% endfor %}
   </div>

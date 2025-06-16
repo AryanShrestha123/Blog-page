@@ -5,5 +5,11 @@
 {% endblock title %}
 
 {% block main %}
-{{post.content}}
+    <h1 class="text-3xl">{{post.title}}</h1>
+    
+    <span class="text-sm text-gray-500">{{post.created_date}}</span>
+
+    <div class="text-lg mt-6">
+        {{post.content}}
+    </div>
 {% endblock main %}
