@@ -12,4 +12,14 @@
     <div class="text-lg mt-6">
         {{post.content}}
     </div>
+
+    <div class="mt-8">
+        <form action="{% url 'detail' slug=post.slug %}" method='post'>
+            {% csrf_token %}
+
+            {{ form.as_p }}
+
+            <button class='py-4 px-8 bg-emerald-700 text-white rounded-md hover:bg-emerald-800 mt-4 '>Submit</button>
+        </form>
+    </div>
 {% endblock main %}
