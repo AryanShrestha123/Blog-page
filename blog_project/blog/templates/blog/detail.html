@@ -7,7 +7,7 @@
 {% block main %}
     <h1 class="text-3xl">{{post.title}}</h1>
     
-    <span class="text-sm text-gray-500">{{post.created_date}}</span>
+    <span class="text-sm text-gray-500">{{post.created_date|date:'d.m.Y'}}</span>
 
     <div class="text-lg mt-6">
         {{post.content}}
@@ -22,4 +22,18 @@
             <button class='py-4 px-8 bg-emerald-700 text-white rounded-md hover:bg-emerald-800 mt-4 '>Submit</button>
         </form>
     </div>
+    <br><hr><br>
+    {% if post.comments.all %}
+        <h2 class="text-2xl">Comments</h2>
+        {% for comment in post.comments.all %}
+        <div class="py-4 px-6 bg-gray-100">
+            <h3 class="font-bold">{{comment.name}} @ {{comment.created_date|timesince}} ago</h3>
+
+            <p>{{comment.content}}</p>
+        </div>
+    {% endfor %}
+    {% else %}
+        <p class="text-gray-500">No comments yet.</p>
+    {% endif %}
+    
 {% endblock main %}
